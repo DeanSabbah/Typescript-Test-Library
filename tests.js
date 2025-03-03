@@ -11,7 +11,8 @@ function checkExpect(func, expected) {
         let result = func();
         if (result == expected) {
             return true;
-        } else {
+        }
+        else {
             return [0, result, expected];
         }
     });
@@ -29,7 +30,8 @@ function checkWithin(func, expected, tolerance) {
         let result = func();
         if (Math.abs(result - expected) <= tolerance) {
             return true;
-        } else {
+        }
+        else {
            return [1, result, expected, tolerance];
         }
     });
