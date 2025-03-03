@@ -56,6 +56,40 @@ function checkSatisfy(func, pred){
 }
 
 /**
+ * This function checks if the functions throw an error. Also checks if the error message is correct (if provided).
+ * @param {function} func - The function to test. Must be passed as a lambda function.
+ * @param {string} message - The error message to check for. Optional.
+ * @returns {void} - Adds a test to be evaluated.
+ */
+function checkError(func, message){
+    tests.push(()=>{
+        if(typeof message == "undefined"){
+            try{
+                func();
+                return [3];
+            }
+            catch(e){
+                return true;
+            }
+        }
+        else{
+            try{
+                let result = func();
+                return [5, result, message];
+            }
+            catch(e){
+                if(e.message == message){
+                    return true;
+                }
+                else{
+                    return [4, e.message, message];
+                }
+            }
+        }
+    });
+}
+
+/**
  * Evaluates all tests and logs the results to the console.
  */
 function test(){
@@ -90,6 +124,7 @@ function test(){
         else{
             console.log("All tests failed.");
         }
+        console.log("\nFailures:");
         for(let i = 0; i < failures.length; i++){
             try{
             // Can easily add more test types here
@@ -106,6 +141,20 @@ function test(){
                     case 2:
                         console.error("Actaul value " + failures[i][1] + " does not satisfy " + failures[i][2] + ".");
                         break;
+                    // checkError
+                    case 3:
+                        console.error("Expected an error, but instead received the value " + failures[i][1] + ".");
+                        break;
+                    // checkError with message
+                    case 4:
+                        console.error('encountered the following error instead of the expected "' + failures[i][1] + '":');
+                        console.log("      " + failures[i][2]);
+                        break;
+                    // checkError no error and with message
+                    case 5:
+                        console.error("Expected the following error, but instead received the value " + failures[i][1] + ".");
+                        console.log("      " + failures[i][2]);
+                        break;
                     // Unknown test type
                     default:
                         throw new Error("Invalid test type.");
@@ -118,4 +167,4 @@ function test(){
     }
 }
 
-export {checkExpect, checkWithin, checkSatisfy, test};
+export {checkExpect, checkWithin, checkSatisfy, checkError, test};
