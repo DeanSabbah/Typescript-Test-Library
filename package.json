@@ -1,0 +1,12 @@
+{
+    "name" : "javascript-test-library",
+    "version" : "0.0.2",
+    "description" : "A test library for JavaScript",
+    "main" : "tests.js",
+    "homepage": "https://github.com/deansabbah/javascript-test-library",
+    "license" : "GPL-3.0",
+    "bugs" : {
+        "url" : "https://github.com/DeanSabbah/JavaScript-Test-Library/issues"
+    },
+    "type": "module"
+}
