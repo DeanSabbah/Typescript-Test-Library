@@ -11,7 +11,7 @@ global.tests = [];
 function test(){
     let failures = [];
     let successes = 0;
-    global.tests.forEach((test)=>{
+    tests.forEach((test)=>{
         let result = test();
         if(result !== true){
             failures.push(result);
