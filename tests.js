@@ -147,7 +147,7 @@ function test(){
                         break;
                     // checkError with message
                     case 4:
-                        console.error('encountered the following error instead of the expected "' + failures[i][1] + '":');
+                        console.error('Encountered the following error instead of the expected "' + failures[i][1] + '":');
                         console.log("      " + failures[i][2]);
                         break;
                     // checkError no error and with message
