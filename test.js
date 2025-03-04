@@ -11,7 +11,7 @@ global.tests = [];
 function test(){
     let failures = [];
     let successes = 0;
-    tests.forEach((test)=>{
+    global.tests.forEach((test)=>{
         let result = test();
         if(result !== true){
             failures.push(result);
@@ -64,12 +64,12 @@ function test(){
                     // checkError with message
                     case 4:
                         console.error('Encountered the following error instead of the expected "' + failures[i][1] + '":');
-                        console.log("      " + failures[i][2]);
+                        console.log('      "' + failures[i][2]+'"');
                         break;
                     // checkError no error and with message
                     case 5:
                         console.error("Expected the following error, but instead received the value " + failures[i][1] + ".");
-                        console.log("      " + failures[i][2]);
+                        console.log('      "' + failures[i][2]+'"');
                         break;
                     // Unknown test type
                     default:

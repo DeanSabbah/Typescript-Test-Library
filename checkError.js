@@ -8,8 +8,8 @@ function checkError(func, message){
     tests.push(()=>{
         if(typeof message == "undefined"){
             try{
-                func();
-                return [3];
+                let result = func();
+                return [3, result];
             }
             catch(e){
                 return true;
