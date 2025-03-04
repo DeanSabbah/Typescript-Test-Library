@@ -1,93 +1,9 @@
-let tests = [];
+import {checkExpect} from "./checkExpect.js";
+import {checkWithin} from "./checkWithin.js";
+import {checkSatisfy} from "./checkSatisfy.js";
+import {checkError} from "./checkError.js";
 
-/**
- * This function checks if the result of a function is equal to the expected value. Only use this function if the expected value is a number.
- * @param {function} func - The function to test. Must be passed as a lambda function.
- * @param {number} expected - The expected value of the function.
- * @returns {void} - Adds a test to be evaluated.
- */
-function checkExpect(func, expected) {
-    tests.push(()=>{
-        let result = func();
-        if (result == expected) {
-            return true;
-        }
-        else {
-            return [0, result, expected];
-        }
-    });
-}
-
-/**
- * This function checks if the result of a function is within a certain tolerance of the expected value. Only use this function if the expected value is a number.
- * @param {function} func - The function to test. Must be passed as a lambda function. 
- * @param {number} expected - The expected value of the function. 
- * @param {number} tolerance - The tolerance of the function.
- * @returns {void} - Adds a test to be evaluated. 
- */
-function checkWithin(func, expected, tolerance) {
-    tests.push(()=>{
-        let result = func();
-        if (Math.abs(result - expected) <= tolerance) {
-            return true;
-        }
-        else {
-           return [1, result, expected, tolerance];
-        }
-    });
-}
-
-/**
- * This function checks if the result of a function satisfies a predicate. Predicate must be a function with one parameter.
- * @param {function} func - The function to test. Must be passed as a lambda function.
- * @param {function} pred - The predicate to test. Must be passed as a lambda function.
- * @returns {void} - Adds a test to be evaluated.
- */
-function checkSatisfy(func, pred){
-    tests.push(()=>{
-        let result = func();
-        if(pred(result)){
-            return true;
-        }
-        else{
-            return [2, result, pred];
-        }
-    });
-}
-
-/**
- * This function checks if the functions throw an error. Also checks if the error message is correct (if provided).
- * @param {function} func - The function to test. Must be passed as a lambda function.
- * @param {string} message - The error message to check for. Optional.
- * @returns {void} - Adds a test to be evaluated.
- */
-function checkError(func, message){
-    tests.push(()=>{
-        if(typeof message == "undefined"){
-            try{
-                func();
-                return [3];
-            }
-            catch(e){
-                return true;
-            }
-        }
-        else{
-            try{
-                let result = func();
-                return [5, result, message];
-            }
-            catch(e){
-                if(e.message == message){
-                    return true;
-                }
-                else{
-                    return [4, e.message, message];
-                }
-            }
-        }
-    });
-}
+global.tests = [];
 
 /**
  * Evaluates all tests and logs the results to the console.
