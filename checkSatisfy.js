@@ -6,7 +6,13 @@
  */
 function checkSatisfy(func, pred){
     tests.push(()=>{
-        let result = func();
+        let result;
+        try{
+            result = func();
+        }
+        catch(e){
+            return [null, e];
+        }
         if(pred(result)){
             return true;
         }

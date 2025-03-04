@@ -7,7 +7,13 @@
 
 function checkExpect(func, expected) {
     tests.push(()=>{
-        let result = func();
+        let result;
+        try {
+            result = func();
+        }
+        catch (e) {
+            return [null, e];
+        }
         if (result == expected) {
             return true;
         }

@@ -7,7 +7,13 @@
  */
 function checkWithin(func, expected, tolerance) {
     tests.push(()=>{
-        let result = func();
+        let result;
+        try {
+            result = func();
+        }
+        catch (e) {
+            return [null, e];
+        }
         if (Math.abs(result - expected) <= tolerance) {
             return true;
         }

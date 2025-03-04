@@ -73,7 +73,10 @@ function test(){
                         break;
                     // Unknown test type
                     default:
-                        throw new Error("Invalid test type.");
+                        if(failures[i][1]){
+                            throw new Error("Error during test evaluation.\n    " + failures[i][1]);
+                        }
+                        throw new Error("Error during test evaluation.");
                 }
             }
             catch(e){
