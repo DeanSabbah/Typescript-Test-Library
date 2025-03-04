@@ -13,7 +13,7 @@ function checkError(func, message){
             }
             catch(e){
                 if(e.message == "func is not a function"){
-                    return [null, e.message];
+                    return [null, e];
                 }
                 return true;
             }
@@ -29,7 +29,7 @@ function checkError(func, message){
                 }
                 else{
                     if(e.message == "func is not a function"){
-                        return [null, e.message];
+                        return [null, e];
                     }
                     return [4, e.message, message];
                 }
