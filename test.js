@@ -3,6 +3,7 @@ import {checkWithin} from "./checkWithin.js";
 import {checkSatisfy} from "./checkSatisfy.js";
 import {checkError} from "./checkError.js";
 
+// Global array to store tests generated in other files
 global.tests = [];
 
 /**

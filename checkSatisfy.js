@@ -8,6 +8,12 @@ function checkSatisfy(func, pred){
     tests.push(()=>{
         let result;
         try{
+            if(typeof(func) !== "function"){
+                throw new TypeError("Func is not a function");
+            }
+            if(typeof(pred) !== "function"){
+                throw new TypeError("Pred is not a function");
+            }
             result = func();
         }
         catch(e){

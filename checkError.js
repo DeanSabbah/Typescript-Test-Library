@@ -6,6 +6,17 @@
  */
 function checkError(func, message){
     tests.push(()=>{
+        try{
+            if(typeof(func) !== "function"){
+                throw new TypeError("Func is not a function");
+            }
+            if(typeof(message) !== "string" && typeof(message) !== "undefined"){
+                throw new TypeError("message is not a string");
+            }
+        }
+        catch(e){
+            return [null, e];
+        }
         if(typeof message == "undefined"){
             try{
                 let result = func();
