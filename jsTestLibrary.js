@@ -10,8 +10,17 @@ global.tester_arr = [];
 var silence = false;
 var execute = true;
 
-// Global method to silence test output
+// Global method to set test output silence
 global.silenceTest = (val = null)=>{
+    try{
+        if(typeof(val) !== "boolean" && val != null){
+            throw new TypeError("Value must be a boolean");
+        }
+    }
+    catch(e){
+        console.error(e);
+        return;
+    }
     if(val != null){
         silence = val;
     }
@@ -20,8 +29,17 @@ global.silenceTest = (val = null)=>{
     }
 }
 
-// Global method to execute tests
+// Global method to set test execution
 global.executeTest = (val = null)=>{
+    try{
+        if(typeof(val) !== "boolean" && val != null){
+            throw new TypeError("Value must be a boolean");
+        }
+    }
+    catch(e){
+        console.error(e);
+        return;
+    }
     if(val != null){
         execute = val;
     }

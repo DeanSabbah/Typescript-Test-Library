@@ -1,3 +1,19 @@
 # Test Library for JavaScript
 
 This is a simple test suite for JavaScript inspired by Scheme's test engine/racket tests.
+
+### Methods:
+##### Methods passed to tests must either be lambda functions, or take no values (and passed without parentheses).
+
+| Methods       | Params                                                                                                                            | Return | Description                                                                                                                                                                                    |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| test          | void                                                                                                                              | void   | Main test method. Runs all stored check methods. Prints results to the console.                                                                                                                |
+| checkStatisfy | func: Function to be tested. pred: Predicate function to be tested against.                                                       | void   | Adds an anonymous function to the global tester_arr array to be tested by the test method. Checks to see if return value of func makes pred return true.                         |
+| checkExpect   | func: Function to be tested. epected: Expected result of func                                                                     | void   | Adds an anonymous function to the global tester_arr array to be tested by the test method. Checks to see if output of function is the same as expected value.                                  |
+| checkWithin   | func: Function to be tested. expected: Expected result of func. tolerance: Amount func's return value can stray +/- from expected | void   | Adds an anonymous function to the global tester_arr array to be tested by the test method. Checks to see if output of function is within tolerance of expected value.                          |
+| checkRange    | func: Function to be tested. minVal: Lower bound to test against. maxVal: Upper bound to test against.                            | void   | Adds an anonymous function to the global tester_arr array to be tested by the test method. Checks to see if output of function is within given range.                                          |
+| checkError    | func: Function to be tested. message: Expected error message from func, optional.                                                 | void   | Adds an anonymous function to the global tester_arr array to be tested by the test method. Checks to see if function throws error, optionally checks if error message is the same as expected. |
+| silenceTest   | val: Boolean value to set output, optional.                                                                                       | Bool   | Stores boolean value that determines if failded test results are logged. If no value is given, returns stored value.                                                                           |
+| executeTest   | val: Boolean value to set execution, optional.                                                                                    | Bool   | Stores boolean value that determines if tests are executed. If no value is given, returns stored value.                                                                                        |
+
+See examples.js for example uses.
