@@ -6,7 +6,7 @@
  */
 
 function checkExpect(func, expected) {
-    tests.push(()=>{
+    tester_arr.push(()=>{
         let result;
         try {
             if(typeof(func) !== "function"){
