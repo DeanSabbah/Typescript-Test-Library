@@ -6,7 +6,7 @@
  * @returns {void} - Adds a test to be evaluated. 
  */
 function checkWithin(func, expected, tolerance) {
-    tests.push(()=>{
+    tester_arr.push(()=>{
         let result;
         try {
             if(typeof(func) !== "function"){

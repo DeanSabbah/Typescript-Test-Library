@@ -5,7 +5,7 @@
  * @returns {void} - Adds a test to be evaluated.
  */
 function checkError(func, message){
-    tests.push(()=>{
+    tester_arr.push(()=>{
         try{
             if(typeof(func) !== "function"){
                 throw new TypeError("Func is not a function");

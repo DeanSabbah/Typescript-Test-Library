@@ -3,10 +3,10 @@
  * @param {Function} func 
  * @param {Number} minVal 
  * @param {Number} maxVal 
- * @returns {void} Adds the test to the tests array
+ * @returns {void} Adds the test to the tester_arr array
  */
 function checkRange(func, minVal, maxVal){
-    tests.push(()=>{
+    tester_arr.push(()=>{
         let result;
         try{
             if(typeof(func) !== "function"){

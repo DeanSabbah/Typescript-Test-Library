@@ -5,7 +5,7 @@
  * @returns {void} - Adds a test to be evaluated.
  */
 function checkSatisfy(func, pred){
-    tests.push(()=>{
+    tester_arr.push(()=>{
         let result;
         try{
             if(typeof(func) !== "function"){
