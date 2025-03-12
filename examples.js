@@ -1,4 +1,4 @@
-import { checkError, checkExpect, checkWithin, checkSatisfy, checkRange, test } from './jsTestLibrary.js';
+import { checkError, checkExpect, checkWithin, checkSatisfy, checkRange, test } from 'javascript-test-library';
 
 function example1 (){
     throw new Error("This is an error message.");
