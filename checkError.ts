@@ -4,20 +4,9 @@
  * @param {string} message - The error message to check for. Optional.
  * @returns {void} - Adds a test to be evaluated.
  */
-function checkError(func, message){
+export default function checkError(func:Function, message:string|undefined = undefined):void{
     tester_arr.push(()=>{
-        try{
-            if(typeof(func) !== "function"){
-                throw new TypeError("Func is not a function");
-            }
-            if(typeof(message) !== "string" && typeof(message) !== "undefined"){
-                throw new TypeError("message is not a string");
-            }
-        }
-        catch(e){
-            return [null, e];
-        }
-        if(typeof message == "undefined"){
+        if(message == undefined){
             try{
                 let result = func();
                 return [3, result];
@@ -48,5 +37,3 @@ function checkError(func, message){
         }
     });
 }
-
-export {checkError}

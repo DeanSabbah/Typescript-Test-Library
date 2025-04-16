@@ -4,21 +4,9 @@
  * @param {function} pred - The predicate to test. Must be passed as a lambda function.
  * @returns {void} - Adds a test to be evaluated.
  */
-function checkSatisfy(func, pred){
+export default function checkSatisfy(pred:Function, func:Function):void {
     tester_arr.push(()=>{
-        let result;
-        try{
-            if(typeof(func) !== "function"){
-                throw new TypeError("Func is not a function");
-            }
-            if(typeof(pred) !== "function"){
-                throw new TypeError("Pred is not a function");
-            }
-            result = func();
-        }
-        catch(e){
-            return [null, e];
-        }
+        let result:any = func();
         if(pred(result)){
             return true;
         }
@@ -27,5 +15,3 @@ function checkSatisfy(func, pred){
         }
     });
 }
-
-export {checkSatisfy}

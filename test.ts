@@ -1,14 +1,14 @@
 /**
  * Evaluates all tests and logs the results to the console.
  */
-function test(){
-    if(!executeTest()){
+export default function test(){
+    if(!globalThis.executeTest()){
         console.log("Tests are currently disabled.");
         return;
     }
-    let failures = [];
-    let successes = 0;
-    tester_arr.forEach((test)=>{
+    let failures:Array<any> = [];
+    let successes:number = 0;
+    globalThis.tester_arr.forEach((test)=>{
         try{
             let result = test();
             if(result !== true){
@@ -23,7 +23,7 @@ function test(){
             failures.push([null, e]);
         }
     });
-    if(tester_arr.length == successes){
+    if(globalThis.tester_arr.length == successes){
         switch(successes){
             case 1:
                 console.log("The test passed!");
@@ -32,18 +32,18 @@ function test(){
                 console.log("Both tests passed!");
                 break;
             default:
-                console.log("All " + tester_arr.length + " tests passed!");
+                console.log("All " + globalThis.tester_arr.length + " tests passed!");
                 break;
         }
     }
     else{
         if(successes > 0){
-            console.log(failures.length + " of the " + tester_arr.length + " tests failed.");
+            console.log(failures.length + " of the " + globalThis.tester_arr.length + " tests failed.");
         }
         else{
             console.log("All tests failed.");
         }
-        if(!silenceTest()){                
+        if(!globalThis.silenceTest()){                
             console.log("\nFailures:");
             for(let i = 0; i < failures.length; i++){
                 try{
@@ -83,7 +83,7 @@ function test(){
                         case 7:
                             console.error("Actual value " + failures[i][1] + " is less than the minimum value of " + failures[i][2] + ".");
                             break;
-                        // Unknown test type
+                        // Unknown test type/Unexpected error
                         default:
                             if(failures[i][1]){
                                 throw new Error("Error during test evaluation.\n    " + failures[i][1]);
@@ -98,5 +98,3 @@ function test(){
         }
     }
 }
-
-export {test};

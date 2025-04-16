@@ -5,21 +5,9 @@
  * @returns {void} - Adds a test to be evaluated.
  */
 
-function checkExpect(func, expected) {
+export default function checkExpect(expected: number, func: Function): void{
     tester_arr.push(()=>{
-        let result;
-        try {
-            if(typeof(func) !== "function"){
-                throw new TypeError("Func is not a function");
-            }
-            if(typeof(expected) !== "number"){
-                throw new TypeError("Expected is not a number");
-            }
-            result = func();
-        }
-        catch (e) {
-            return [null, e];
-        }
+        let result: number = func();
         if (result == expected) {
             return true;
         }
@@ -28,5 +16,3 @@ function checkExpect(func, expected) {
         }
     });
 }
-
-export {checkExpect};

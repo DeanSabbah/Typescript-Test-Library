@@ -1,12 +1,12 @@
 {
-    "name": "javascript-test-library",
+    "name": "typescript-test-library",
     "version": "0.1.1",
-    "description": "A test library for JavaScript",
-    "main": "index.js",
-    "homepage": "https://github.com/deansabbah/javascript-test-library",
+    "description": "A test library for TypeScript",
+    "main": "index.ts",
+    "homepage": "https://github.com/DeanSabbah/TypeScript-Test-Library",
     "license": "GPL-3.0",
     "bugs": {
-        "url": "https://github.com/DeanSabbah/JavaScript-Test-Library/issues"
+        "url": "https://github.com/DeanSabbah/TypeScript-Test-Library/issues"
     },
     "type": "module",
     "devDependencies": {
