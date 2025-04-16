@@ -102,4 +102,7 @@ export default function test():void{
             }
         }
     }
+    if(!preserveTest()){
+        clearTests();
+    }
 }

@@ -22,10 +22,12 @@ function odd(x){
     return x%2 == 1;
 }
 
-//executeTest(false); // This will prevent the tests from running
-//silenceTest(true); // This will prevent the tests from printing to the console
-//executeTest(true); // This will allow the tests to run
-//silenceTest(false); // This will allow the tests to print to the console
+//executeTest(false);   // This will prevent the tests from running
+//silenceTest(true);    // This will prevent the tests from printing to the console
+//executeTest(true);    // This will allow the tests to run
+//silenceTest(false);   // This will allow the tests to print to the console
+preserveTest(false);        // This will remove tests are they are tested
+//preserveTest(true);       // This will preserve tests after they are tested
 
 //console.log(silenceTest()); // This should print false
 //console.log(executeTest()); // This should print true
@@ -48,4 +50,5 @@ checkRange(0, 5, ()=>example2(2));                          // This should pass
 checkRange(0, 1, ()=>example2(2));                          // This should fail
 checkRange(3, 5, ()=>example2(2));                          // This should fail
 
+test();                                                     // This will run the tests
 test();                                                     // This will run the tests

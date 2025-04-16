@@ -8,6 +8,7 @@ import test from "./test.ts";
 globalThis.tester_arr = [];
 globalThis.silence = false;
 globalThis.execute = true;
+globalThis.preserve = true;
 
 globalThis.silenceTest = (val:boolean | null = null):boolean|void => {
     if(val != null){
@@ -24,6 +25,15 @@ globalThis.executeTest = (val:boolean | null = null):boolean|void => {
     }
     else{
         return execute;
+    }
+}
+
+globalThis.preserveTest = (val:boolean | null = null):boolean|void => {
+    if(val != null){
+        preserve = val;
+    }
+    else{
+        return preserve;
     }
 }
 
