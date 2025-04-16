@@ -27,5 +27,9 @@ globalThis.executeTest = (val:boolean | null = null):boolean|void => {
     }
 }
 
+globalThis.clearTests = () => {
+    tester_arr = [];
+}
+
 // Exported methods
 export { test, checkExpect, checkWithin, checkSatisfy, checkError, checkRange };

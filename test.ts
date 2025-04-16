@@ -1,16 +1,21 @@
 /**
  * Evaluates all tests and logs the results to the console.
+ * @returns {void}
  */
-export default function test(){
-    if(!globalThis.executeTest()){
+export default function test():void{
+    if(!executeTest()){
         console.log("Tests are currently disabled.");
+        return;
+    }
+    else if(tester_arr.length == 0){
+        console.log("No tests loaded.");
         return;
     }
     let failures:Array<any> = [];
     let successes:number = 0;
-    globalThis.tester_arr.forEach((test)=>{
+    tester_arr.forEach((test)=>{
         try{
-            let result = test();
+            let result:any = test();
             if(result !== true){
                 failures.push(result);
             }
@@ -23,7 +28,7 @@ export default function test(){
             failures.push([null, e]);
         }
     });
-    if(globalThis.tester_arr.length == successes){
+    if(tester_arr.length == successes){
         switch(successes){
             case 1:
                 console.log("The test passed!");
@@ -32,18 +37,18 @@ export default function test(){
                 console.log("Both tests passed!");
                 break;
             default:
-                console.log("All " + globalThis.tester_arr.length + " tests passed!");
+                console.log("All " + tester_arr.length + " tests passed!");
                 break;
         }
     }
     else{
         if(successes > 0){
-            console.log(failures.length + " of the " + globalThis.tester_arr.length + " tests failed.");
+            console.log(failures.length + " of the " + tester_arr.length + " tests failed.");
         }
         else{
             console.log("All tests failed.");
         }
-        if(!globalThis.silenceTest()){                
+        if(!silenceTest()){                
             console.log("\nFailures:");
             for(let i = 0; i < failures.length; i++){
                 try{

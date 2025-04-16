@@ -24,8 +24,6 @@ function odd(x){
 
 //executeTest(false); // This will prevent the tests from running
 //silenceTest(true); // This will prevent the tests from printing to the console
-//executeTest("Not a bool"); // Should throw TypeError
-//silenceTest("Not a bool"); // Should throw TypeError
 //executeTest(true); // This will allow the tests to run
 //silenceTest(false); // This will allow the tests to print to the console
 

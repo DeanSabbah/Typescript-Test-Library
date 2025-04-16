@@ -1,9 +1,10 @@
 export {};
 
 declare global {
-    var tester_arr: Array<any>;
+    var tester_arr: Array<Function>;
     var silence: boolean;
     var execute: boolean;
-    var silenceTest:Function;
-    var executeTest:Function;
+    function silenceTest(val?: boolean | null): boolean | void;
+    function executeTest(val?: boolean | null): boolean | void;
+    function clearTests():void;
 }
