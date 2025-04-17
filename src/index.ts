@@ -10,7 +10,7 @@ globalThis.tester_arr = [];
 // Initialize parameters to default values
 let silence:boolean = false;
 let execute:boolean = true;
-let preserve:boolean = true;
+let preserve:boolean = false;
 
 globalThis.silenceTest = (val:boolean | null = null):boolean|void => {
     if(val != null){
