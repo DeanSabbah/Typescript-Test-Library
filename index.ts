@@ -1,9 +1,9 @@
-import checkExpect from "./checkExpect.ts";
-import checkWithin from "./checkWithin.ts";
-import checkSatisfy from "./checkSatisfy.ts";
-import checkError from "./checkError.ts";
-import checkRange from "./checkRange.ts";
-import test from "./test.ts";
+import checkExpect from "./checkExpect.js";
+import checkWithin from "./checkWithin.js";
+import checkSatisfy from "./checkSatisfy.js";
+import checkError from "./checkError.js";
+import checkRange from "./checkRange.js";
+import test from "./test.js";
 
 globalThis.tester_arr = [];
 

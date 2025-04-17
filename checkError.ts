@@ -11,7 +11,7 @@ export default function checkError(func:Function, message:string|undefined = und
                 let result = func();
                 return [3, result];
             }
-            catch(e){
+            catch(e:any){
                 if(e.message == "func is not a function"){
                     return [null, e];
                 }
@@ -23,7 +23,7 @@ export default function checkError(func:Function, message:string|undefined = und
                 let result = func();
                 return [5, result, message];
             }
-            catch(e){
+            catch(e:any){
                 if(e.message == message){
                     return true;
                 }
