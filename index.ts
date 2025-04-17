@@ -6,9 +6,14 @@ import checkRange from "./checkRange.ts";
 import test from "./test.ts";
 
 globalThis.tester_arr = [];
-globalThis.silence = false;
-globalThis.execute = true;
-globalThis.preserve = true;
+
+declare var silence: boolean;
+declare var execute: boolean;
+declare var preserve: boolean;
+
+silence = false;
+execute = true;
+preserve = true;
 
 globalThis.silenceTest = (val:boolean | null = null):boolean|void => {
     if(val != null){
