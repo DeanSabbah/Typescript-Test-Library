@@ -26,7 +26,7 @@ function odd(x){
 //silenceTest(true);    // This will prevent the tests from printing to the console
 //executeTest(true);    // This will allow the tests to run
 //silenceTest(false);   // This will allow the tests to print to the console
-//preserveTest(false);  // This will remove tests are they are tested
+//preserveTest(false);  // This will remove tests after they are tested
 //preserveTest(true);   // This will preserve tests after they are tested
 
 //console.log(silenceTest()); // This should print false
