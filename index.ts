@@ -7,13 +7,10 @@ import test from "./test.ts";
 
 globalThis.tester_arr = [];
 
-declare var silence: boolean;
-declare var execute: boolean;
-declare var preserve: boolean;
-
-silence = false;
-execute = true;
-preserve = true;
+// Initialize parameters to default values
+let silence:boolean = false;
+let execute:boolean = true;
+let preserve:boolean = true;
 
 globalThis.silenceTest = (val:boolean | null = null):boolean|void => {
     if(val != null){
