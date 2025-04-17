@@ -5,7 +5,7 @@ This is a simple test suite for TypeScript inspired by Scheme's test engine/rack
 #### Install with `npm i typescript-test-library`
 
 ### Methods:
-##### Methods passed to tests must either be lambda functions, or take no values (and passed without parentheses). See examples.js for details.
+##### Methods passed to tests must either be lambda functions, or take no values (and passed without parentheses). See [examples.js](https://github.com/DeanSabbah/Typescript-Test-Library/blob/main/examples.js) for details.
 
 | Methods       | Params                                                                                                                            | Return | Description                                                                                                                                                                                    |
 |---------------|-----------------------------------------------------------------------------------------------------------------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -20,4 +20,4 @@ This is a simple test suite for TypeScript inspired by Scheme's test engine/rack
 | preserveTest  | val: Boolean value to set execution, optional.                                                                                    | Bool   | Stores boolean value that determines if tests cleared after they are tested. If no value is given, returns stored value.                                                                                        |
 | clearTests    | void                                                                                                                              | Void   | Clears tests stored in the test array. Allows you to test new functions without having old ones be retested. |
 
-See examples.js for example uses.
+See [examples.js](https://github.com/DeanSabbah/Typescript-Test-Library/blob/main/examples.js) for example uses.
