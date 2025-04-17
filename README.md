@@ -2,6 +2,8 @@
 
 This is a simple test suite for TypeScript inspired by Scheme's test engine/racket tests.
 
+#### Install with `npm i typescript-test-library`
+
 ### Methods:
 ##### Methods passed to tests must either be lambda functions, or take no values (and passed without parentheses). See examples.ts for details.
 

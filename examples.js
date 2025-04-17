@@ -1,10 +1,10 @@
-import { checkError, checkExpect, checkWithin, checkSatisfy, checkRange, test } from './index.js';
+import { checkError, checkExpect, checkWithin, checkSatisfy, checkRange, test } from 'typescript-test-library';
 
 function example1 (){
     throw new Error("This is an error message.");
 }
 
-let example2 = (x:number)=>{
+let example2 = (x)=>{
     return ((y)=>{
         return 2*x-y;
     })(x);
@@ -14,11 +14,11 @@ let example3 = ()=>{
     return 2.001;
 }
 
-function even(x:number){
+function even(x){
     return x%2 == 0;
 }
 
-function odd(x:number){
+function odd(x){
     return x%2 == 1;
 }
 
