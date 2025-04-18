@@ -9,7 +9,7 @@
         "dist"
     ],
     "homepage": "https://github.com/DeanSabbah/TypeScript-Test-Library",
-    "license": "GPL-3.0",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/DeanSabbah/TypeScript-Test-Library/issues"
     },
