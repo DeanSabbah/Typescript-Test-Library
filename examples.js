@@ -42,8 +42,8 @@ checkExpect(2, ()=>example2(2));                            // This should pass
 checkExpect(3, ()=>example2(2));                            // This should fail
 checkExpect(true, ()=>odd(1))                               // This should pass
 checkExpect(false, ()=>even(2))                             // This should fail
-checkSatisfy(()=>example2(2), even);                        // This should pass
-checkSatisfy(()=>example2(2), odd);                         // This should fail
+checkSatisfy(even, ()=>example2(2));                        // This should pass
+checkSatisfy(odd, ()=>example2(2));                         // This should fail
 checkWithin(2, 0.001, example3);                            // This should pass
 checkWithin(2, 0.01, example3);                             // This should pass
 checkWithin(3, 0.001, example3);                            // This should fail
