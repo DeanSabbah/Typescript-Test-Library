@@ -40,6 +40,8 @@ checkError(()=>example2(2));                                // This should fail
 checkError(()=>example2(2), "This is an error message.");   // This should fail
 checkExpect(2, ()=>example2(2));                            // This should pass
 checkExpect(3, ()=>example2(2));                            // This should fail
+checkExpect(true, ()=>odd(1))                               // This should pass
+checkExpect(false, ()=>even(2))                             // This should fail
 checkSatisfy(()=>example2(2), even);                        // This should pass
 checkSatisfy(()=>example2(2), odd);                         // This should fail
 checkWithin(2, 0.001, example3);                            // This should pass
