@@ -1,4 +1,1 @@
-on:
-  release:
-    types: [created]
-  workflow_dispatch:
+
