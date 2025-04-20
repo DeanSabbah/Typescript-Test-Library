@@ -1,6 +1,6 @@
 # Test Library for TypeScript
 
-This is a simple test suite for TypeScript inspired by Scheme's test engine/racket tests.
+This is a simple test suite built using TypeScript inspired by Scheme's test engine/racket tests.
 
 #### Install with `npm i typescript-test-library`
 
