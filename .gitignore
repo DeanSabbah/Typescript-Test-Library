@@ -12,3 +12,6 @@
 
 #ignore package lock
 package-lock.json
+
+#ignore release zip
+*.zip
